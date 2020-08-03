@@ -408,11 +408,14 @@ TxSchema.statics.queryDefineServiceTxHashByServiceName = async function (service
 };
 
 
-TxSchema.statics.findServiceAllList = async function (pageNum: number, pageSize: number,):Promise<ITxStruct>{
+TxSchema.statics.findServiceList = async function (serviceName:string, pageNum: number, pageSize: number,):Promise<ITxStruct>{
     const queryParameters: any = {
         type: TxType.define_service,
         status: TxStatus.SUCCESS,
     };
+    if (serviceName && serviceName.length) {
+        queryParameters['msgs.msg.name'] = {$regex: new RegExp(serviceName,'i')};
+    }
     return await this.find(queryParameters)
         .sort({
             'msgs.msg.ex.bind':-1,
