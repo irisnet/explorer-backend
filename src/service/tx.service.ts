@@ -169,8 +169,8 @@ export class TxService {
     }
 
     async findServiceList(query: ServiceListReqDto): Promise<ListStruct<ServiceResDto[]>> {
-        const { pageNum, pageSize, useCount } = query;
-        const serviceTxList: ITxStruct[] = await (this.txModel as any).findServiceAllList(pageNum, pageSize, useCount);
+        const { serviceName,pageNum, pageSize, useCount } = query;
+        const serviceTxList: ITxStruct[] = await (this.txModel as any).findServiceList(serviceName,pageNum, pageSize, useCount);
         const serviceNameList: IServiceName[] = serviceTxList.map((item: any) => {
             let ex:any = item.msgs[0].msg.ex || {};
             return {
