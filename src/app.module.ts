@@ -33,7 +33,7 @@ const params = {
         // DenomTaskModule,
         // NftTaskModule,
         // ValidatorTaskModule,
-        ValidatorModule,
+        // ValidatorModule,
         TxModule,
         TxTaskModule,
     ],
