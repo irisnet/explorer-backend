@@ -33,6 +33,9 @@ export enum TxType {
     kill_request_context = 'KillRequestContext',
     update_request_context = 'UpdateRequestContext',
     create_record = 'CreateRecord',
+    service_set_withdraw_address = 'service/SetWithdrawAddress',
+    withdraw_earned_fees = 'WithdrawEarnedFees',
+    
     // nft
     burn_nft = 'BurnNft',
     transfer_nft = 'TransferNft',
