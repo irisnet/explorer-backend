@@ -34,6 +34,9 @@ TxTypeSchema.statics.queryServiceTxTypeList = async function ():Promise<ITxTypeS
             {"type_name":TxType.start_request_context},
             {"type_name":TxType.kill_request_context},
             {"type_name":TxType.update_request_context},
+            {"type_name":TxType.service_set_withdraw_address},
+            {"type_name":TxType.create_record},
+            {"type_name":TxType.withdraw_earned_fees},
         ]
     };
     return await this.find(queryParameters,{type_name:1});
